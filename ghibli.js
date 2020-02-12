@@ -1,39 +1,39 @@
-const baseURL = 'https://ghibliapi.herokuapp.com/films';
+const baseURL = 'https://ghibliapi.herokuapp.com/people';
+let url;
 
-function displayResults(title) {
-    const [film1, film2] = title;
-console.log(film1)
+const searchTerm = document.querySelector('.search');
+const searchForm = document.querySelector('form');
+const submitBtn = document.querySelector('.submit');
 
-// const x = dragons.map(dragon => dragon.id)
-// console.log(x)
+function displayResults(name) {
+console.log(name);
 
-title.forEach((film) => {
+title.forEach((name) => {
 
-    const para = document.createElement('div');
-    const para2 = document.createElement('div');
-    const para3 = document.createElement('img');
+    let clearfix = document.createElement('div');
+    let clearfix2 = document.createElement('div');
 
-    para.textContent = film.name 
-    para2.textContent = film.type
-    para3.src = film.title[0]
+    para.textContent = name.name 
+    para2.textContent = name.type
+    para3.src = name.title[0]
 
-    const submitbt = document.querySelector('.controls');
+    const submitBtn= document.querySelector('.controls');
 
-    submitbt.appendChild(para);
-    submitbt.appendChild(para2);
-    submitbt.appendChild(para3);
+    article.appendChild(clearfix);
+    article.appendChild(clearfix2);
+    article.appendChild(img);
     
  
 })
 }
 
-const submitbt = document.querySelector('.submit');
+const submitBtn = document.querySelector('.submit');
 
-submitbt.addEventListener('click',  wrap );
+submitBtn.addEventListener('click',  wrap );
 
 
 function wrap() {
-    fetch(URL).then(function (result) {
+    fetch(baseURL).then(function (result) {
         return result.json(); 
     }).then(function (json) {
         displayResults(json); 
